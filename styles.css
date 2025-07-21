@@ -333,9 +333,10 @@ footer {
 }
 
 .hero-heading {  /*For hero image overlay*/
-  font-size: 2.5rem;
+  font-size: clamp(1.75rem, 6vw, 4rem); /* responsive scaling */
   font-weight: bold;
   color: white !important;
+  text-align: center;
 }
 
 .hero-text {

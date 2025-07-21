@@ -33,14 +33,16 @@ document.addEventListener("DOMContentLoaded", function () {
   let lastScrollTop = 0;
   const header = document.querySelector("header");
   const showThreshold = 100; // Show header only if scroll is near top
+  const scrollUpTolerance = 20; // Minimum scroll up distance to show header
 
   window.addEventListener("scroll", function () {
     const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollDelta = lastScrollTop - currentScroll;
 
     if (currentScroll > lastScrollTop  && currentScroll > showThreshold) {
       // scrolling down → hide header
       header.classList.add("header-hidden");
-    } else if (currentScroll < lastScrollTop && currentScroll < showThreshold) {
+    } else if (scrollDelta > scrollUpTolerance || currentScroll < showThreshold) {
       // scrolling up → show header
       header.classList.remove("header-hidden");
     }

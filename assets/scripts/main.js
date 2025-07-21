@@ -32,19 +32,20 @@ document.addEventListener("DOMContentLoaded", function () {
   // ===================
   let lastScrollTop = 0;
   const header = document.querySelector("header");
+  const showThreshold = 100; // Show header only if scroll is near top
 
   window.addEventListener("scroll", function () {
     const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
-    if (currentScroll > lastScrollTop) {
+    if (currentScroll > lastScrollTop  && currentScroll > showThreshold) {
       // scrolling down → hide header
       header.classList.add("header-hidden");
-    } else {
+    } else if (currentScroll < lastScrollTop && currentScroll < showThreshold) {
       // scrolling up → show header
       header.classList.remove("header-hidden");
     }
 
-    lastScrollTop = Math.max(currentScroll, 0);
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // prevent negative
   });
   // ===================
   // SLIDESHOW FUNCTIONALITY

@@ -27,7 +27,25 @@ document.addEventListener("DOMContentLoaded", function () {
     footerEmailLink.href = `mailto:${RECEIVER_EMAIL}`;
     footerEmailLink.textContent = RECEIVER_EMAIL;
   }
+  // ===================
+  // MOVING HEADER FUNCTIONALITY
+  // ===================
+  let lastScrollTop = 0;
+  const header = document.querySelector("header");
 
+  window.addEventListener("scroll", function () {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll > lastScrollTop) {
+      // scrolling down → hide header
+      header.classList.add("header-hidden");
+    } else {
+      // scrolling up → show header
+      header.classList.remove("header-hidden");
+    }
+
+    lastScrollTop = Math.max(currentScroll, 0);
+  });
   // ===================
   // SLIDESHOW FUNCTIONALITY
   // ===================

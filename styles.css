@@ -40,7 +40,7 @@ body {
 .site-header,
 header {
   background: var(--color-bg-light);
-  padding: clamp(0.5rem, 2vw, 1rem) 0;
+  padding: 1rem 0;
   box-shadow: 0 1px 4px rgba(0,0,0,0.05);
   position: fixed; /*sticky*/
   top: 0;
@@ -51,10 +51,6 @@ header {
 
 .header-hidden {
   transform: translateY(-100%);
-}
-
-body {
-  padding-top: clamp(3rem, 6vh, 5rem); /* Match estimated header height */
 }
 
 .site-header,

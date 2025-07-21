@@ -52,8 +52,8 @@ footer {
 .nav-container {
   display: flex;
   align-items: center;
-  /*justify-content: center;*/
-  justify-content: space-between; /* align logo and nav on edges */
+  justify-content: center;
+  /*justify-content: space-between; /* align logo and nav on edges */
   padding: 0.5rem 0rem 0rem 0rem; /* top-bottom 1rem, left-right 2rem */
   flexwrap: nowrap;
 }
@@ -62,6 +62,8 @@ footer {
   display: flex;
   gap: 1.5rem; /* adjust spacing between links */
   flex-wrap: nowrap; /* keep items in a single row */
+  overflow-x: auto;           /* allow scrolling if needed */
+  white-space: nowrap;        /* keep all items in one line */
 }
 
 .main-nav a {
@@ -70,10 +72,40 @@ footer {
   font-weight: 500;
   font-size: 1rem;
   white-space: nowrap;
+  overflow-x: auto;           /* allow scrolling if needed */
+  white-space: nowrap;        /* keep all items in one line */
 }
 
 .main-nav a:hover {
   color: var(--color-primary);
+}
+
+/* Resize nav text on smaller screens */
+@media (max-width: 480px) {
+  .main-nav {
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-container,
+  .nav-container {
+    padding: 0.25rem 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-nav a {
+    font-size: 0.85rem; /* slightly smaller text */
+  }
+
+  .logo-text {
+    font-size: 1.5rem; /* reduce logo size */
+  }
+
+  .logo-img {
+    height: 60px; /* reduce logo image */
+  }
 }
 
 .logo {

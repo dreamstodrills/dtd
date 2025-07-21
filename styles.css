@@ -95,7 +95,7 @@ footer {
 }
 
 .logo-text {
-  font-size: 2.5rem;         /* Increase as desired */
+  font-size: clamp(1.5rem, 4vw, 2.5rem); /* Scales between 1.5rem and 2.5rem */
   /*font-family: 'DM Serif Display', serif;*/
   /*font-family: 'Quicksand', sans-serif;*/
   /*font-family: 'Cormorant Garamond', serif;*/
@@ -337,6 +337,12 @@ footer {
   font-weight: bold;
   color: white !important;
   text-align: center;
+}
+
+@media (max-width: 768px) {
+  .hero-text {
+    padding: 1rem;
+  }
 }
 
 .hero-text {

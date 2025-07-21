@@ -38,14 +38,26 @@ body {
 
 /* Header and Navigation */
 .site-header,
-header,
+header {
+  background: var(--color-bg-light);
+  padding: 1rem 0;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  position: fixed; /*sticky*/
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out;
+}
+
+.header-hidden {
+  transform: translateY(-100%);
+}
+
+.site-header,
 footer {
   background: var(--color-bg-light);
   padding: 1rem 0;
   box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-  position: sticky;
-  top: 0;
-  z-index: 100;
 }
 
 .header-container,

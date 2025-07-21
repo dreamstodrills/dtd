@@ -56,18 +56,16 @@ footer {
   /*justify-content: space-between; /* align logo and nav on edges */
   padding: 0.5rem 0rem 0rem 0rem; /* top-bottom 1rem, left-right 2rem */
   flex-wrap: nowrap;
-  flex-direction: row;
+  /*flex-direction: row;*/
 }
 
 .main-nav {
   display: flex;
   gap: 1.5rem; /* adjust spacing between links */
   flex-wrap: nowrap; /* keep items in a single row */
-  overflow-x: auto;           /* allow scrolling if needed */
+  overflow-x: hidden;   /*auto*/
   white-space: nowrap;        /* keep all items in one line */
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  /*flex-direction: row;*/
 }
 
 .main-nav a {
@@ -76,7 +74,6 @@ footer {
   font-weight: 500;
   font-size: 1rem;
   white-space: nowrap;
-  overflow-x: auto;           /* allow scrolling if needed */
 }
 
 .main-nav a:hover {
@@ -93,7 +90,8 @@ footer {
 
 @media (max-width: 768px) {
   .main-nav {
-    overflow-x: auto;
+    overflow-x: hidden;   /*auto*/
+    white-space: nowrap;
     gap: 1rem;
     padding: 0.5rem 1rem;
   }
@@ -141,7 +139,7 @@ footer {
   font-weight: 600;
   color: var(--color-text);
   letter-spacing: 0.5px;
-  white-space: nowrap;
+  /*white-space: nowrap;*/
 }
 
 .nav-list,
@@ -155,8 +153,6 @@ footer {
   margin: 0;
   padding: 0.5rem 1rem 0 1rem;
   flex-wrap: nowrap;
-  white-space: nowrap;
-  overflow-x: auto;
 }
 
 .nav-list a,
@@ -656,9 +652,6 @@ h3 {
     text-align: center;
   }
 }
-
-
-
 
 /* Services preview */
 .services-flex {

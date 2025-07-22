@@ -10,6 +10,25 @@ const RECEIVER_EMAIL = "info@dreamstodrills.com";
 })();
 
 document.addEventListener("DOMContentLoaded", function () {
+   // ===================
+  // UPDATE HEADER SPACER
+  // ===================
+  function updateHeaderSpacer() {
+    var header = document.querySelector(".site-header");
+    var spacer = document.getElementById("header-spacer");
+    if (header && spacer) {
+      spacer.style.height = header.offsetHeight + "px";
+    }
+  }
+  updateHeaderSpacer();
+  window.addEventListener("resize", updateHeaderSpacer);
+
+  // And if you show/hide header on scroll, call it after toggling the header!
+  window.addEventListener("scroll", function () {
+    // ... your header show/hide logic ...
+    updateHeaderSpacer();
+  });
+
   // ===================
   // EMAIL FUNCTIONALITY
   // ===================
@@ -42,9 +61,11 @@ document.addEventListener("DOMContentLoaded", function () {
     if (currentScroll > lastScrollTop  && currentScroll > showThreshold) {
       // scrolling down → hide header
       header.classList.add("header-hidden");
+      document.body.classList.add("header-is-hidden");     // <--- add this line
     } else if (scrollDelta > scrollUpTolerance || currentScroll < showThreshold) {
       // scrolling up → show header
       header.classList.remove("header-hidden");
+      document.body.classList.remove("header-is-hidden");  // <--- add this line
     }
 
     lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // prevent negative

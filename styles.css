@@ -946,10 +946,10 @@ h3 {
 
 .section-divider {
   border: none;
-  height: 1px;
+  height: 1.25px;
   width: 300px; /* adjust width for shorter or longer divider */
   background-color: var(--color-primary); /* your brand color */
-  margin: 2rem auto; /* centers it and adds spacing */
+  margin: 1.25rem auto; /* centers it and adds spacing */
   opacity: 0.5;
 }
 
@@ -981,12 +981,12 @@ h3 {
 .vision-mission {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 0rem;
 }
 
 .vision-mission > div {
   background: #fff;
-  padding: 2rem;
+  padding: 1.25rem;
   border-radius: 12px;
   /*box-shadow: 0 4px 12px rgba(0,0,0,0.05); */
   text-align: center;

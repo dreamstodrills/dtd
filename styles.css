@@ -40,17 +40,26 @@ body {
 .site-header,
 header {
   background: var(--color-bg-light);
-  padding: 1rem 0;
+  padding: clamp(0.5rem, 2vw, 1.5rem) 0;
   box-shadow: 0 1px 4px rgba(0,0,0,0.05);
   position: fixed; /*sticky*/
   top: 0;
   width: 100%;
   z-index: 1000;
+  /*height: 2rem;*/
   transition: transform 0.3s ease-in-out;
 }
 
 .header-hidden {
   transform: translateY(-100%);
+}
+
+body {
+  padding-top: 0 /*clamp(3rem, 6vh, 6rem); /* Match estimated header height */
+}
+
+body.header-is-hidden {
+  padding-top: 0 !important;
 }
 
 .site-header,
@@ -343,6 +352,11 @@ footer {
 }
 
 /* Hero Section For Other Pages */
+#header-spacer {
+  width: 100%;
+  display: block;
+}
+
 .hero {
   position: relative;
   text-align: center;
@@ -352,7 +366,7 @@ footer {
   width: 100%;
   height: auto;
   overflow: hidden;
-  margin-top: 0;
+  margin-top: 0; /* Will be handled by body padding */
 }
 
 .hero-image {
@@ -389,12 +403,31 @@ footer {
 }
 
 @media (max-width: 768px) {
-  .hero-text {
-    padding: 1rem;
+  .hero {
+    height: 50vh;
+    min-height: 250px;
+  }
+  .hero-image {
+    height: 100%;
+    max-height: none;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
   }
 }
 
+/*
+.hero-image {
+    height: 100%; /* Fill the hero container height */
+/*    max-height: none; /* Remove max-height constraint on mobile */
+/*    width: 100%; /* Ensure full width */
+/*    object-fit: cover; /* Maintain aspect ratio while filling */
+/*    object-position: center; /* Center the image */
+/*  }
+*/
+
 .hero-text {
+  padding: 1rem;
   max-width: none;
   margin: 0 auto;
   white-space: normal;

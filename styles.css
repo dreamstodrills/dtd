@@ -574,7 +574,7 @@ footer {
 .section-neutral {
   background-color: var(--color-bg);
   padding: 3rem 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 0rem;
   border-radius: 8px;
 }
 
@@ -633,7 +633,7 @@ h3 {
 /* Promise Tab */
 .promise-tab {
   background-color: var(--color-bg-light); /* #fdf7e3; /* soft gold background or use white for subtlety */
-  border: 2px solid #b89138; /* match your brand gold */
+  border: 2px solid #b89138;
   padding: 1rem 1.25rem;
   border-radius: 1.5rem;
   max-width: 300px;
@@ -781,6 +781,7 @@ h3 {
 
 .service-block {
   background: var(--color-bg-light);
+  border: 2px solid #b89138;
   border-radius: 8px;
   padding: 1.5rem;
   flex: 1 1 280px;

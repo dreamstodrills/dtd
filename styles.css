@@ -777,8 +777,20 @@ h3 {
   border-radius: 8px;
   padding: 1.5rem;
   flex: 1 1 280px;
+  max-width: 100%;  
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
   transition: box-shadow 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .services-flex {
+    justify-content: center; /* center blocks on small screens */
+  }
+
+  .service-block {
+    flex: 1 1 100%;      /* <-- changed: full width on small screens */
+    max-width: 400px;    /* optional max-width for large mobiles */
+  }
 }
 
 .service-block:hover {

@@ -83,10 +83,17 @@ document.addEventListener("DOMContentLoaded", function () {
     slides.forEach((slide, i) => {
       slide.classList.remove("active", "slide-left", "slide-right");
 
-      if (i === index) {
-        slide.classList.add("active", index > currentIndex ? "slide-left" : "slide-right");
+      if (i === currentIndex) {
+        slide.classList.add(index > currentIndex ? "slide-left" : "slide-right");
+        setTimeout(() => slide.classList.remove("slide-left", "slide-right"), 500);
       }
     });
+
+    // Activate new slide after a short delay for smoothness and to avoid flash
+    setTimeout(() => {
+    slides[index].classList.add("active");
+    }, 20); // Small delay lets old slide start its transition
+
 
     dots.forEach(dot => dot.classList.remove("active"));
     dots[index].classList.add("active");
